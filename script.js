@@ -1,7 +1,7 @@
 // render pie in javascript
-d3.json('verbcasedata.json', function (jsondata) {
+d3.json('allcasedata.json', function (jsondata) {
 
-    var verblabel = 'быть'
+    var verblabel = 'верить'
     var verbdata = jsondata[5][verblabel]
 
     d3.selectAll('.verblabel').text(verblabel)
@@ -194,21 +194,5 @@ d3.json('verbcasedata.json', function (jsondata) {
                 })
             }
         })
-        // Now add the annotation. Use the centroid method to get the best coordinates
-        // svg
-        //     .selectAll('mySlices')
-        //     .data(data_ready)
-        //     .enter()
-        //     .append('text')
-        //     .text(function (d) { 
-        //         if (d.data.key == 'No prepositions in specified window') {
-        //             return d.data.key
-        //         }
-        //         return d.data.key + ' (' + d.data.value + ')'
-        //      })
-        //     .attr("transform", function (d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
-        //     .style("text-anchor", "middle")
-        //     .style("font-size", 17)
-
     }
 })
