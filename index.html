@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Color scale -->
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<!-- d3-slider -->
+<script src="https://unpkg.com/d3-simple-slider"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<title>Verbs and their prepositions</title>
+<style>
+    body {
+        padding: 20px
+    }
+
+    .sentence {
+        font-size: 16px;
+    }
+    .sentence:hover {
+        border: 2px;
+        border-style:solid; 
+        border-color: black;
+        padding: 5px;
+    }
+    .chosen path{
+        /* stroke: black; */
+        stroke-width: 5px;
+        opacity: 1
+    }
+</style>
+
+<body>
+    <div class='row'>
+        <div class='col-md-12'>
+            <h3>Prepositions occurring at the distance of <span class='windowsize'>?</span> word(s) of the stated verb.</h3>
+            <p style='color: gray'>
+                Out of 98,892 total sentences in the Russian National Corpus, only
+                including verbs that occur 10 or more times total in the corpus.
+            </p>
+            <hr>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-md-5'>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <p>Select verb</p>
+                    <h4>
+                        <select id="selectButton"></select>
+                    </h4>
+                </div>
+                <div class='col-md-6 text-center'>
+                    <p>Window size (on either side of verb)</p>
+                    <div id="slider-step"></div>
+                </div>
+            </div>
+            <div id="my_dataviz"></div>
+        </div>
+        <div class='col-md-1'></div>
+        <div class='col-md-6'>
+            <h4>Sentences with <span class='verblabel'>?</span> and <span id='prep'></span>
+                at a distance of <span class='windowsize'></span> word(s)
+            </h4>
+            <div id='sentences'></div>
+        </div>
+    </div>
+</body>
+
+
+<script src='script.js'></script>
