@@ -179,6 +179,7 @@ d3.json('allcasedata.json', function (jsondata) {
         slices.on('click', function (d) {
             d3.selectAll('.sentence').remove()
             if (d3.select(this).attr('class') == 'chosen') {
+                slices.attr('class','notchosen')
                 slices.selectAll('path').style('stroke-opacity',1).style('opacity',.6)
                 slices.selectAll('text').style('opacity',1)   
             } else {
